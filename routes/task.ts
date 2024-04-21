@@ -1,5 +1,4 @@
 import express from 'express';
-import User from '../models/user';
 import Task from '../models/task';
 import mongoose from 'mongoose';
 import auth, {Auth} from '../middleware/auth';
