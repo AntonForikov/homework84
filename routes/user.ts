@@ -27,7 +27,7 @@ userRouter.post('/sessions', async (req, res, next) => {
 
     if (!user) return res.status(404).send({error: "Username and password doesn't match."});
 
-    const isMatch = user.checkPassword(req.body.password);
+    const isMatch = await user.checkPassword(req.body.password);
     if (!isMatch) return res.status(404).send({error: "Username and password doesn't match."});
     user.generateToken();
     user.save();
