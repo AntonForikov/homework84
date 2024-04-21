@@ -1,6 +1,6 @@
 import {Model, ObjectId} from 'mongoose';
 
-export interface User {
+export interface UserFromDb {
   _id: ObjectId;
   username: string;
   password: string;
@@ -12,4 +12,4 @@ export interface UserMethods {
   generateToken(): void;
 }
 
-export type UserModel = Model<User, {}, UserMethods>
+export type UserModel = Model<UserFromDb, {}, UserMethods>

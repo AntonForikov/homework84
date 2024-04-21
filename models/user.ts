@@ -1,10 +1,10 @@
-import {User, UserMethods, UserModel} from '../types';
+import {UserFromDb, UserMethods, UserModel} from '../types';
 import {Schema, model} from 'mongoose';
 import bcrypt from 'bcrypt';
 
 const SALT_WORK_FACTOR = 10;
 
-const UserSchema = new Schema<User, UserModel, UserMethods>({
+const UserSchema = new Schema<UserFromDb, UserModel, UserMethods>({
   username: {
     type: String,
     required: true,
@@ -42,6 +42,6 @@ UserSchema.set('toJSON', {
   }
 })
 
-const User = model<User, UserModel>('User', UserSchema);
+const User = model<UserFromDb, UserModel>('User', UserSchema);
 
 export default User;
