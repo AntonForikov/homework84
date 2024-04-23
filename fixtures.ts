@@ -22,12 +22,12 @@ const run = async () => {
     {
       username: 'user1',
       password: '1',
-      token: crypto.randomUUID()
+      token: `Bearer ${crypto.randomUUID()}`
     },
     {
       username: 'user2',
       password: '2',
-      token: crypto.randomUUID()
+      token: `Bearer ${crypto.randomUUID()}`
     }
   );
 

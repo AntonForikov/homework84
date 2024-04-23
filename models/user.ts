@@ -25,7 +25,7 @@ UserSchema.methods.checkPassword = function (password: string) {
 };
 
 UserSchema.methods.generateToken = function () {
-  return this.token = crypto.randomUUID();
+  return this.token = `Bearer ${crypto.randomUUID()}`;
 };
 UserSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
